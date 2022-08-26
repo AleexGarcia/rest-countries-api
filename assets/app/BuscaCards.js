@@ -31,7 +31,7 @@ async function buscaCard() {
         let consultaCountriesConvertida = await consultaCountries.json();
         consultaCountriesConvertida.forEach(element => {
             ListaDeCards.adiciona(new Card(
-                element.flags.svg,
+                element.flags.png,
                 element.name,
                 element.population,
                 element.region,
