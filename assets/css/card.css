@@ -1,0 +1,14 @@
+.card{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    grid-template-columns: auto;
+
+}
+.card__caption{
+    margin-left: 1rem;
+}
+.card__title{
+    margin-top: 1.5rem;
+    font-weight: 800;
+
+}

@@ -9,19 +9,55 @@
         integrity="sha512-IJEbgDEF7OeKJRa0MY2PApnyJHRIsgzCveek4ec8VWQ+7KG3ZSKVNYa5xP/Gh0hVP0Mwb+gBsk+GwR3JQGhQNg=="
         crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="assets/css/stylus.css">
-    <title>Were in the world</title>
+    <title>Were in the world | Home</title>
 </head>
 
 <body>
     <header class="header">
         <h1 class="header__title"><a href="#">Where in the World?</a></h1>
-
         <input type="button" name="dark-mode" id="dark-mode-btn">
         <label for="dark-mode-btn" class="dark-mode-lb">Dark Mode</label>
-
     </header>
-    <main></main>
+    <main class="main">
+
+        <form action="">
+            <div class="search-box">
+                <ion-icon name="search-outline"></ion-icon>
+                <label for="busca" class="search__label"></label>
+                <input class="search__input" type="search" name="busca" id="busca">
+            </div>
+        </form>
+
+        <div class="filter">
+            <div class="filter-box">
+                <input type="text" id="filter-input" name="filter" class="filter__input" placeholder="Filter by Region">
+                <i class="filter__icon" for="filter"></i>
+            </div>
+            <div class="dropDown">
+                <div class="listDropDown">
+                    <div id="africa">Africa</div>
+                    <div id="america">America</div>
+                    <div id="asia">Asia</div>
+                    <div id="europe">Europe</div>
+                    <div id="oceania">Oceania</div>
+                </div>
+            </div>
+        </div>
+        <figure class="card">
+            <img class="card__img" src="" alt="">
+            <figcaption class="card__caption">
+                <h2 class="card__title">Germany</h2>
+                <div class="card__information">
+                    <span class="card__population">Population: 81.770.900</span>
+                    <span class="card__region">Region: Europe</span>
+                    <span class="card__capital">Capital: Berlin</span>
+                </div>
+            </figcaption>
+        </figure>
+    </main>
     <footer></footer>
+    <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 </body>
 
 </html>

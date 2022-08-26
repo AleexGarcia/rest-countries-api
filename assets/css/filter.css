@@ -1,0 +1,44 @@
+
+.filter-box{
+    display: flex;
+    background: #fff;
+    align-items: center;
+    padding: 1rem 2rem;
+    border-radius: 8px;
+}
+.filter__input{
+    font-size: 14px;
+    width: 100%;
+    border: none;
+    outline: none;
+    font-weight: 600;
+    color: var(--text-v-dark-blue);
+}
+.filter__icon{
+    display: inline-block;
+    background: url(../img/select-angle-down.png);
+    height: 28px;
+    width: 22px;
+}
+.filter{
+    width: 55%;
+    font-weight: 600;
+    margin-left: 1rem;
+}
+.dropDown{
+   display: none;
+}
+.listDropDown{
+   
+    z-index: 1;
+    margin-top: 8px;
+    
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 8px;
+    
+    background:#fff;
+    border-radius: 8px;
+    padding: 1rem 2rem;
+}
