@@ -43,8 +43,10 @@ async function buscaCard() {
                 element.borders
             ));
         });
+       criaCards();
     } catch (erro) {
         console.log(erro);
     }
 }
 
+buscaCard();

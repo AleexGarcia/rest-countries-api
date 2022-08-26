@@ -1,8 +1,10 @@
 const cartas = document.querySelector("#cartas");
-function criaCards(){
-    buscaCard();
-    ListaDeCards.cards.forEach(element => {
-        cartas.innerHTML = `
+
+function criaCards() {
+    ListaDeCards.cards.forEach((element,index) => {
+        index = document.createElement("div");
+        cartas.appendChild(index);
+      index.innerHTML = `
         <figure class="card">
             <img class="card__img" src="${element.flags}" alt="Bandeira: ${element.name.common}">
             <figcaption class="card__caption">
@@ -14,8 +16,6 @@ function criaCards(){
                 </div>
             </figcaption>
         </figure>
-        
         `
-        
     });
 }
