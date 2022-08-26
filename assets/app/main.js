@@ -54,6 +54,8 @@ async function buscaCard() {
 function criaCards() {
     ListaDeCards.cards.forEach((element, index) => {
         index = document.createElement("div");
+        index.id = `card-box`;
+        index.classList.add("card-box");
         cartas.appendChild(index);
         index.innerHTML = `
         <figure class="card">

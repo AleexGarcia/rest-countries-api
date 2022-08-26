@@ -1,3 +1,28 @@
-@import url(search.css);
-@import url(filter.css);
-@import url(card.css);
+.cards{
+    margin-top: 3rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 2rem;
+
+}
+@media screen and (min-width:767px){
+    .cards{
+        
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        
+    }
+}
+@media screen and (min-width:1024px){
+    .cards{
+        
+        flex-direction: row;
+        justify-content: center;
+        align-items: stretch;
+        
+    }
+}
