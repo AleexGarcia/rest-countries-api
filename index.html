@@ -29,17 +29,18 @@
         </form>
 
         <div class="filter">
-            <div class="filter-box">
-                <input type="text" id="filter-input" name="filter" class="filter__input" placeholder="Filter by Region">
+            <div class="filter-box" id="filter-box">
+                <input type="text" id="filter-input" name="filter" class="filter__input" placeholder="Filter by Region"
+                readonly>
                 <i class="filter__icon" for="filter"></i>
             </div>
-            <div class="dropDown">
-                <div class="listDropDown">
-                    <div id="africa">Africa</div>
-                    <div id="america">America</div>
-                    <div id="asia">Asia</div>
-                    <div id="europe">Europe</div>
-                    <div id="oceania">Oceania</div>
+            <div class="dropDown" id="dropDown-box">
+                <div class="listDropDown" id="listDropDown">
+                    <div class="listDropDown-item" id="list-item" data-region="Africa">Africa</div>
+                    <div class="listDropDown-item" id="list-item" data-region="Americas">America</div>
+                    <div class="listDropDown-item" id="list-item" data-region="Asia">Asia</div>
+                    <div class="listDropDown-item" id="list-item" data-region="Europe">Europe</div>
+                    <div class="listDropDown-item" id="list-item" data-region="Oceania">Oceania</div>
                 </div>
             </div>
         </div>
@@ -47,11 +48,15 @@
 
         </section>
     </main>
-    <footer></footer>
+    <footer class="attribution">
+        Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>.
+        Coded by <a href="https://github.com/AleexGarcia">Alexandre Garcia</a>.
+    </footer>
     <script type="module" src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@5.5.2/dist/ionicons/ionicons.js"></script>
 
     <script src="assets/app/main.js"></script>
+    <script src="assets/app/filtro.js"></script>
 </body>
 
 </html>

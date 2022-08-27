@@ -26,6 +26,8 @@
     margin-left: 1rem;
 }
 .dropDown{
+
+    width: 55%;
    display: none;
 }
 .listDropDown{
@@ -42,3 +44,11 @@
     border-radius: 8px;
     padding: 1rem 2rem;
 }
+.listDropDown-item{
+    width: 100%;
+}
+.listDropDown-item:hover{
+    background: rgb(77, 184, 255);
+    cursor: pointer;
+}
+

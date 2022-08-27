@@ -32,7 +32,7 @@ async function buscaCard() {
         let consultaCountriesConvertida = await consultaCountries.json();
         consultaCountriesConvertida.forEach(element => {
             ListaDeCards.adiciona(new Card(
-                element.flags.png,
+                element.flags.svg,
                 element.name,
                 element.population,
                 element.region,
@@ -45,6 +45,8 @@ async function buscaCard() {
             ));
         });
         criaCards();
+        cardsHTML = document.querySelectorAll('#card-box');
+        exibeCardsIniciais();
        
     } catch (erro) {
         console.log(erro);
@@ -53,9 +55,11 @@ async function buscaCard() {
 
 function criaCards() {
     ListaDeCards.cards.forEach((element, index) => {
+        let i = index;
         index = document.createElement("div");
         index.id = `card-box`;
-        index.classList.add("card-box");
+        index.classList.add('card-box','oculto');
+        index.setAttribute('data-region', element.region);
         cartas.appendChild(index);
         index.innerHTML = `
         <figure class="card">
@@ -71,6 +75,12 @@ function criaCards() {
         </figure>
         `
     });
+}
+
+function exibeCardsIniciais(){
+    for (let index = 0; index < 8; index++) {
+        cardsHTML[parseInt(Math.random()*249)].classList.remove('oculto'); 
+    }
 }
 
 buscaCard();

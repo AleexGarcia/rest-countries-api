@@ -30,3 +30,22 @@ body{
     color: var(--white);
     background: var(--bkg-v-dark-blue);
 }
+.open{
+    position: absolute;
+    display: inline-block;
+    z-index: 1;
+}
+.oculto{
+    display: none;
+}
+.attribution {
+
+    font-size: 11px;
+    text-align: center;
+    margin-top: 2rem;
+    margin-bottom: 2rem;
+}
+
+.attribution a {
+    color: hsl(228, 45%, 44%);
+}
