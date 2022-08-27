@@ -31,10 +31,13 @@ listDropDown.addEventListener('click',(e)=>{
 
 function filtraRegião(region){
     cardsHTML.forEach(element => {
-       if(region == element.dataset.region){
-        element.classList.remove('oculto');
-       }else{
+       if(region != element.dataset.region){
         element.classList.add('oculto');
+       }else{
+        element.classList.remove('oculto');
+       }
+       if(region === ""){
+        element.classList.remove('oculto');
        }
     });
 }

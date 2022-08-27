@@ -46,7 +46,7 @@ async function buscaCard() {
         });
         criaCards();
         cardsHTML = document.querySelectorAll('#card-box');
-        exibeCardsIniciais();
+        
        
     } catch (erro) {
         console.log(erro);
@@ -58,8 +58,9 @@ function criaCards() {
         let i = index;
         index = document.createElement("div");
         index.id = `card-box`;
-        index.classList.add('card-box','oculto');
+        index.classList.add('card-box');
         index.setAttribute('data-region', element.region);
+        index.setAttribute('data-name', element.name.common);
         cartas.appendChild(index);
         index.innerHTML = `
         <figure class="card">
@@ -77,10 +78,6 @@ function criaCards() {
     });
 }
 
-function exibeCardsIniciais(){
-    for (let index = 0; index < 8; index++) {
-        cardsHTML[parseInt(Math.random()*249)].classList.remove('oculto'); 
-    }
-}
+
 
 buscaCard();
