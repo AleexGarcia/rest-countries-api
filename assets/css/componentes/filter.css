@@ -3,8 +3,9 @@
     display: flex;
     background: #fff;
     align-items: center;
-    padding: 1rem 2rem;
+    padding: 1rem;
     border-radius: 8px;
+    cursor: pointer;
 }
 .filter__input{
     font-size: 14px;
@@ -16,7 +17,7 @@
 }
 .filter__icon{
     display: inline-block;
-    background: url(../img/select-angle-down.png);
+    background: url(../../img/select-angle-down.png);
     height: 28px;
     width: 22px;
 }
