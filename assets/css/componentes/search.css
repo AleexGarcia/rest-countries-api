@@ -1,6 +1,5 @@
 .search-box {
 
-    width: calc(100vw - 2rem);
     border-radius: 6px;
     background: var(--text-el-white);
     padding: 1rem 1.5rem;
@@ -15,4 +14,11 @@
     border: none;
     background: inherit;
     width: 100%
+}
+@media screen and (min-width:640px){
+    .search-box{
+        margin: 0;
+        width: 33%;
+    }
+   
 }

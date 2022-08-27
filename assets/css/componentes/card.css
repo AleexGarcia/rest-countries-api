@@ -1,5 +1,5 @@
 .card-box{
-    width: calc(100% - 6rem);
+    width: 264px;
 }
 .card{
    
@@ -35,15 +35,4 @@
 }
 .card__capital--span,.card__region--span,.card__population--span{
     font-weight: 800;
-}
-
-@media screen and (min-width:767px){
-    .card-box{
-        width: calc(33% - 2rem);
-    }
-}
-@media screen and (min-width:1023px){
-    .card-box{
-        width: calc(25% - 2rem);
-    }
 }

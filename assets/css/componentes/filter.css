@@ -24,7 +24,6 @@
 .filter{
     width: 55%;
     font-weight: 600;
-    margin-left: 1rem;
 }
 .dropDown{
 
@@ -53,3 +52,18 @@
     cursor: pointer;
 }
 
+@media screen and (min-width:640px){
+    .filter{
+       
+        width: auto;
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        align-items: stretch;
+    }
+    .dropDown{
+        margin-top: 8px;
+        width: 100%;
+        top: 48px;
+    }
+}
