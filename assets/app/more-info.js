@@ -1,1 +1,0 @@
-moreInfo = document.querySelector('#more-info')

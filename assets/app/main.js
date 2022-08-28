@@ -4,18 +4,19 @@ const moreInfo = document.querySelector('#more-info');
 
 class Card {
 
-    constructor(flags, name, population, region, subregion, capital, domain, currencies, languages, borders, cca3) {
+    constructor(flags, name,nativeName, population, region, subregion, capital, domain, currencies, languages, borders, alpha3Code) {
         this.flags = flags;
         this.name = name;
+        this.nativeName = nativeName;
         this.population = population;
         this.region = region;
         this.subregion = subregion;
         this.capital = capital;
-        this.tld = domain;
+        this.topLevelDomain = domain;
         this.currencies = currencies;
         this.languages = languages;
         this.borders = borders;
-        this.cca3 = cca3;
+        this.alpha3Code = alpha3Code;
     }
 
 }
@@ -31,21 +32,23 @@ const ListaDeCards = new ListCard;
 
 async function buscaCard() {
     try {
-        let consultaCountries = await fetch("https://restcountries.com/v3.1/all");
+        let consultaCountries = await fetch("https://restcountries.com/v2/all");
         let consultaCountriesConvertida = await consultaCountries.json();
+        console.log(consultaCountriesConvertida);
         consultaCountriesConvertida.forEach(element => {
             ListaDeCards.adiciona(new Card(
                 element.flags.png,
                 element.name,
+                element.nativeName,
                 element.population,
                 element.region,
                 element.subregion,
                 element.capital,
-                element.tld,
+                element.topLevelDomain[0],
                 element.currencies,
                 element.languages,
                 element.borders,
-                element.cca3
+                element.alpha3Code
             ));
         });
         criaCards();
@@ -64,18 +67,17 @@ function criaCards() {
         div.id = index;
         div.classList.add('card-box');
         div.setAttribute('data-region', element.region);
-        div.setAttribute('data-name', element.name.common);
-        div.setAttribute('data-sigla', element.cca3);
+        div.setAttribute('data-name', element.name);
         cartas.appendChild(div);
         div.innerHTML = `
         <figure class="card">
-            <img class="card__img" src="${element.flags}" alt="Bandeira: ${element.name.common}">
+            <img class="card__img" src="${element.flags}" alt="Bandeira: ${element.name}">
             <figcaption class="card__caption">
-                <h2 class="card__title">${element.name.common}</h2>
+                <h2 class="card__title">${element.name}</h2>
                 <div class="card__information">
                     <span class="card__population"><span class="card__population--span">Population: </span> ${element.population}</span>
                     <span class="card__region"><span class="card__region--span">Region: </span> ${element.region}</span>
-                    <span class="card__capital"><span class="card__capital--span">Capital: </span>${element.capital}</span>
+                    <span class="card__capital"><span class="card__capital--span">Capital: </span>${element.capital!= undefined ? element.capital: `There is no capital`}</span>
                 </div>
             </figcaption>
         </figure>
@@ -102,36 +104,38 @@ function ExibeMoreInfo(id) {
         <section class="more-info container" id="more-info">
         <button id="more-info__btn" class="more-info__btn">Back</button>
         <figure id="country" class="country">
-            <img src="${element.flags}" alt="Bandeira: ${element.name.common}" class="country__img">
+            <img src="${element.flags}" alt="Bandeira: ${element.name}" class="country__img">
             <figcaption class="country__info">
-                <h1 class="country__name">${element.name.common}</h1>
+                <h1 class="country__name">${element.name}</h1>
                 <div class="info-1">
-                    <span class="country__name-native" ><strong>Native Name:</strong>${
+                    <span class="country__name-native" ><strong>Native Name: </strong>${
                                       
-                        element.name.nativeName
+                        element.nativeName
                         }
                         </span>
-                    <span class="country__population"><strong>Population:</strong>${element.population}</span>
-                    <span class="country__region"><strong>Region:</strong>${element.region}</span>
+                    <span class="country__population"><strong>Population: </strong>${element.population}</span>
+                    <span class="country__region"><strong>Region: </strong>${element.region}</span>
                     <span class="country__sub-region"><strong>Sub Region: </strong>${element.subregion}</span>
-                    <span class="country__capital"><strong>Capital:</strong>${element.capital}</span>
+                    <span class="country__capital"><strong>Capital: </strong>${element.capital}</span>
                 </div>
                 <div class="info-2">
-                    <span class="country__domain"><strong>Top Level Domain: </strong>${element.tld}</span>
-                    <span class="country__currencies"><strong>Currencies: </strong>${element.currencies}</span>
-                    <span class="country__languages"><strong>Languages: </strong>${element.languages}</span>
+                    <span class="country__domain"><strong>Top Level Domain: </strong>${element.topLevelDomain}</span>
+                    <span class="country__currencies"><strong>Currencies: </strong>${element.currencies[0].name}</span>
+                    <span class="country__languages"><strong>Languages: </strong>${element.languages.map(e =>{
+                        return `${e.name} `
+                    })}</span>
                 </div>
                 <div class="info__border">
                     <span class="country__border">Border Countries</span>
                     <div class="border__links">
-                    ${element.borders.map(sigla => {
+                    ${element.borders!= null ? element.borders.map(sigla => {
                         return `
                              <a href="#" class="country__border-country">${sigla}</a>
                         
-                        `
-    })
-
-        }
+                            `
+                         })
+                        :   `<p  class="country__border-country">There are no border countries</p> `
+                      }
                         
                     </div>
                 </div>
@@ -154,8 +158,10 @@ function botaoRetornar() {
         filtroBusca.classList.remove('oculto');
         cartas.classList.remove('oculto');
         moreInfo.innerHTML = "";
-        buscaCard();
+
     })
 }
+
+
 
 buscaCard();
