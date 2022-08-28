@@ -1,0 +1,58 @@
+@import url(stylus.css);
+.more-info{
+    padding-top: 2.5rem;
+    
+}
+.country__img{
+    box-shadow: 0px 0px 2px 0px rgb(32, 32, 32);
+}
+.more-info__btn{
+    background: var(--text-el-white);
+    border: none;
+    box-shadow: 0px 0px 2px 0px rgb(32, 32, 32);
+    padding: .5rem 1rem ;
+    margin-bottom: 2.5rem;
+}
+.more-info__btn::before{
+    content: '';
+    background: url(../img/arrow-left-long-solid.svg) no-repeat center;
+    padding: 8px;
+    margin-right: 8px;
+    
+}
+.country__info{
+    margin-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    row-gap: 2rem;
+}
+.country__name{
+    font-weight: 800;
+}
+.info-1,.info-2,.info__border{
+    display: flex;
+    flex-direction: column;
+    row-gap: 1em;
+    font-size: 14px;
+    
+}
+strong{
+    font-weight: 600;
+}
+.country__border{
+    font-size: 14px;
+    font-weight: 600;
+}
+.border__links{
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+.country__border-country{
+    text-decoration: none;
+    padding: .5rem 2rem;
+    font-family: inherit;
+    background: var(--text-el-white);
+    box-shadow: 0px 0px 2px 0px rgb(32, 32, 32);
+    color: inherit;
+}

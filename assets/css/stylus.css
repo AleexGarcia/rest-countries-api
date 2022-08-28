@@ -1,9 +1,7 @@
 @import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
 @import url(header.css);
 @import url(main.css);
-@import url(componentes/search.css);
-@import url(componentes/filter.css);
-@import url(componentes/card.css);
+
 :root{
 
     --el-dark-blue:hsl(209, 23%, 22%);
@@ -21,7 +19,7 @@
 body{
     font-size: 1rem;
     color: var(--text-v-dark-blue);
-    background: var(--input-dark-gray);
+    background: var(--bkg-very-light-gray);
     font-family: var(--font-family);
     font-weight: 300;
    
