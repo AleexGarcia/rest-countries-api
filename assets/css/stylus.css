@@ -23,6 +23,7 @@ body{
     background: var(--bkg-very-light-gray);
     font-family: var(--font-family);
     font-weight: 300;
+    min-height: 100vh;
    
 }
 .darkMode{

@@ -4,7 +4,7 @@ const moreInfo = document.querySelector('#more-info');
 
 class Card {
 
-    constructor(flags, name, population, region, subregion, capital, domain, currencies, languages, borders, sigla) {
+    constructor(flags, name, population, region, subregion, capital, domain, currencies, languages, borders, cca3) {
         this.flags = flags;
         this.name = name;
         this.population = population;
@@ -15,7 +15,7 @@ class Card {
         this.currencies = currencies;
         this.languages = languages;
         this.borders = borders;
-        this.cca3 = sigla;
+        this.cca3 = cca3;
     }
 
 }
@@ -45,7 +45,7 @@ async function buscaCard() {
                 element.currencies,
                 element.languages,
                 element.borders,
-                element.altSpellings
+                element.cca3
             ));
         });
         criaCards();
@@ -65,6 +65,7 @@ function criaCards() {
         div.classList.add('card-box');
         div.setAttribute('data-region', element.region);
         div.setAttribute('data-name', element.name.common);
+        div.setAttribute('data-sigla', element.cca3);
         cartas.appendChild(div);
         div.innerHTML = `
         <figure class="card">
@@ -105,7 +106,11 @@ function ExibeMoreInfo(id) {
             <figcaption class="country__info">
                 <h1 class="country__name">${element.name.common}</h1>
                 <div class="info-1">
-                    <span class="country__name-native" ><strong>Native Name:</strong>${element.name.nativeName[0]}</span>
+                    <span class="country__name-native" ><strong>Native Name:</strong>${
+                                      
+                        element.name.nativeName
+                        }
+                        </span>
                     <span class="country__population"><strong>Population:</strong>${element.population}</span>
                     <span class="country__region"><strong>Region:</strong>${element.region}</span>
                     <span class="country__sub-region"><strong>Sub Region: </strong>${element.subregion}</span>
@@ -119,10 +124,9 @@ function ExibeMoreInfo(id) {
                 <div class="info__border">
                     <span class="country__border">Border Countries</span>
                     <div class="border__links">
-                    ${element.borders.forEach(e => {
-        `
-                       
-                        <a href="#" class="country__border-country">${e}</a>
+                    ${element.borders.map(sigla => {
+                        return `
+                             <a href="#" class="country__border-country">${sigla}</a>
                         
                         `
     })
