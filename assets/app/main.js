@@ -130,7 +130,7 @@ function ExibeMoreInfo(id) {
 
                 if (sigla == ListaDeCards.cards[i].alpha3Code) {
                     return `
-                             <a onclick='ExibeMoreInfo(${i})' class="country__border-country">${ListaDeCards.cards[i].name}</a>
+                             <a onclick='ExibeMoreInfo(${i})' class="country__border-country pointer">${ListaDeCards.cards[i].name}</a>
                         
                             `
                 }
