@@ -1,6 +1,7 @@
 const cartas = document.querySelector("#cartas");
-const main = document.querySelector('#main');
-var filtroBusca = document.querySelector('.search-filter')
+const filtroBusca = document.querySelector('#search-filter');
+const moreInfo = document.querySelector('#more-info');
+
 class Card {
 
     constructor(flags, name, population, region, subregion, capital, domain, currencies, languages, borders, sigla) {
@@ -135,9 +136,9 @@ function ExibeMoreInfo(id) {
         </section>                            
     `
 
-
+    cartas.classList.add('oculto');    
     filtroBusca.classList.add('oculto');
-    cartas.innerHTML = templateInfo;
+    moreInfo.innerHTML = templateInfo;
     botaoRetornar();
 
 
@@ -147,7 +148,8 @@ function botaoRetornar() {
     back = document.querySelector('#more-info__btn');
     back.addEventListener('click', () => {
         filtroBusca.classList.remove('oculto');
-        cartas.innerHTML = "";
+        cartas.classList.remove('oculto');
+        moreInfo.innerHTML = "";
         buscaCard();
     })
 }
