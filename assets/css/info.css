@@ -69,6 +69,7 @@ strong{
         display: grid;
         grid-template-columns: 50% 50%;
         column-gap: 6rem;
+        padding-bottom: 4rem;
     }
     .country__info{
         display: grid;
