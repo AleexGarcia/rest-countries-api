@@ -4,7 +4,7 @@ const moreInfo = document.querySelector('#more-info');
 
 class Card {
 
-    constructor(flags, name,nativeName, population, region, subregion, capital, domain, currencies, languages, borders, alpha3Code) {
+    constructor(flags, name, nativeName, population, region, subregion, capital, domain, currencies, languages, borders, alpha3Code) {
         this.flags = flags;
         this.name = name;
         this.nativeName = nativeName;
@@ -34,7 +34,6 @@ async function buscaCard() {
     try {
         let consultaCountries = await fetch("https://restcountries.com/v2/all");
         let consultaCountriesConvertida = await consultaCountries.json();
-        console.log(consultaCountriesConvertida);
         consultaCountriesConvertida.forEach(element => {
             ListaDeCards.adiciona(new Card(
                 element.flags.png,
@@ -77,7 +76,7 @@ function criaCards() {
                 <div class="card__information">
                     <span class="card__population"><span class="card__population--span">Population: </span> ${element.population}</span>
                     <span class="card__region"><span class="card__region--span">Region: </span> ${element.region}</span>
-                    <span class="card__capital"><span class="card__capital--span">Capital: </span>${element.capital!= undefined ? element.capital: `There is no capital`}</span>
+                    <span class="card__capital"><span class="card__capital--span">Capital: </span>${element.capital != undefined ? element.capital : `There is no capital`}</span>
                 </div>
             </figcaption>
         </figure>
@@ -108,10 +107,8 @@ function ExibeMoreInfo(id) {
             <figcaption class="country__info">
                 <h1 class="country__name">${element.name}</h1>
                 <div class="info-1">
-                    <span class="country__name-native" ><strong>Native Name: </strong>${
-                                      
-                        element.nativeName
-                        }
+                    <span class="country__name-native" ><strong>Native Name: </strong>${element.nativeName
+        }
                         </span>
                     <span class="country__population"><strong>Population: </strong>${element.population}</span>
                     <span class="country__region"><strong>Region: </strong>${element.region}</span>
@@ -121,21 +118,27 @@ function ExibeMoreInfo(id) {
                 <div class="info-2">
                     <span class="country__domain"><strong>Top Level Domain: </strong>${element.topLevelDomain}</span>
                     <span class="country__currencies"><strong>Currencies: </strong>${element.currencies[0].name}</span>
-                    <span class="country__languages"><strong>Languages: </strong>${element.languages.map(e =>{
-                        return `${e.name} `
-                    })}</span>
+                    <span class="country__languages"><strong>Languages: </strong>${element.languages.map(e => {
+            return `${e.name} `
+        })}</span>
                 </div>
                 <div class="info__border">
                     <span class="country__border">Border Countries</span>
                     <div class="border__links">
-                    ${element.borders!= null ? element.borders.map(sigla => {
-                        return `
-                             <a href="#" class="country__border-country">${sigla}</a>
+                    ${element.borders != null ? element.borders.map(sigla => {
+            for (let i = 0; i < ListaDeCards.cards.length; i++) {
+
+                if (sigla == ListaDeCards.cards[i].alpha3Code) {
+                    return `
+                             <a onclick='ExibeMoreInfo(${i})' class="country__border-country">${ListaDeCards.cards[i].name}</a>
                         
                             `
-                         })
-                        :   `<p  class="country__border-country">There are no border countries</p> `
-                      }
+                }
+            }
+
+        }).join('')
+            : `<span  class="country__border-country">There are no border countries</span> `
+        }
                         
                     </div>
                 </div>
@@ -144,7 +147,7 @@ function ExibeMoreInfo(id) {
         </section>                            
     `
 
-    cartas.classList.add('oculto');    
+    cartas.classList.add('oculto');
     filtroBusca.classList.add('oculto');
     moreInfo.innerHTML = templateInfo;
     botaoRetornar();
