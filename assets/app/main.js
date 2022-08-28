@@ -54,15 +54,15 @@ async function buscaCard() {
 }
 
 function criaCards() {
-    ListaDeCards.cards.forEach((element, index) => {
-        let i = index;
-        index = document.createElement("div");
-        index.id = `card-box`;
-        index.classList.add('card-box');
-        index.setAttribute('data-region', element.region);
-        index.setAttribute('data-name', element.name.common);
-        cartas.appendChild(index);
-        index.innerHTML = `
+    ListaDeCards.cards.forEach((element) => {
+        
+       let div = document.createElement("div");
+        div.id = `card-box`;
+        div.classList.add('card-box');
+        div.setAttribute('data-region', element.region);
+        div.setAttribute('data-name', element.name.common);
+        cartas.appendChild(div);
+        div.innerHTML = `
         <figure class="card">
             <img class="card__img" src="${element.flags}" alt="Bandeira: ${element.name.common}">
             <figcaption class="card__caption">
