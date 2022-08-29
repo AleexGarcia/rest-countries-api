@@ -55,7 +55,8 @@ async function buscaCard() {
         figureCaption = document.querySelectorAll('.card__caption');
 
     } catch (erro) {
-        console.log(erro);
+        console.log(erro)
+        cartas.innerHTML = '<p>Erro na requisição dos dados na API</p>'
     }
 }
 

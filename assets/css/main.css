@@ -1,11 +1,12 @@
 .cards{
     min-height: 50vh;
     display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    align-items: center;
+    flex-direction: row;
+    justify-content: center;
+    align-items: stretch;
     flex-wrap: wrap;
-    gap: 2rem;
+    row-gap: 2rem;
+
     padding-top: 2rem ;
 
 }
@@ -13,7 +14,10 @@
     .cards{
         
         flex-direction: row;
+        justify-content: flex-start;
         align-items: stretch;
+        column-gap: 2%;
+        row-gap: 1rem;
         
     }
     .search-filter{
@@ -23,13 +27,16 @@
         padding-top: 2rem;
     }
 }
-@media screen and (min-width:1024px){
+@media screen and (min-width:1023px){
     .cards{
+        column-gap: 2%;
+        row-gap: 1rem;
         
-        flex-direction: row;
-        align-items: stretch;
         
+       
+      
     }
+  
     .search-filter{
         margin: 0;
     }
