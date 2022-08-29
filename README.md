@@ -41,8 +41,8 @@ Users should be able to:
 
 ### Links
 
-- Solution URL: [Add solution URL here](https://github.com/AleexGarcia/rest-countries-api-with-color-theme-switcher-master)
-- Live Site URL: [Add live site URL here](https://aleexgarcia.github.io/rest-countries-api-with-color-theme-switcher-master/)
+- Solution URL: [Repositorio](https://github.com/AleexGarcia/rest-countries-api-with-color-theme-switcher-master)
+- Live Site URL: [Site](https://aleexgarcia.github.io/rest-countries-api-with-color-theme-switcher-master/)
 
 ## My process
 

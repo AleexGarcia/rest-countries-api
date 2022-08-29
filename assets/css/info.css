@@ -67,14 +67,16 @@ strong{
 }
 @media screen and (min-width:1023px) {
     .country__img{
-        height: 100%;
+        height: 350px;
         width: 100%;
     }
     .country{
         display: grid;
         grid-template-columns: 1fr 1fr;
+        grid-template-rows: auto;
         column-gap: 6rem;
         padding-bottom: 4rem;
+        align-items: center;
     }
     .country__info{
         display: grid;
