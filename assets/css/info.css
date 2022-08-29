@@ -72,7 +72,7 @@ strong{
     }
     .country{
         display: grid;
-        grid-template-columns: 50% 50%;
+        grid-template-columns: 1fr 1fr;
         column-gap: 6rem;
         padding-bottom: 4rem;
     }
