@@ -8,7 +8,8 @@
     box-shadow: 0px 0px 2px 0px rgb(32, 32, 32);
 }
 .more-info__btn{
-    background: var(--text-el-white);
+    background: var(--el-dark-blue);
+    color: var(--text-white);
     border: none;
     box-shadow: 0px 0px 2px 0px rgb(32, 32, 32);
     padding: .5rem 1rem ;
@@ -56,9 +57,9 @@ strong{
     text-decoration: none;
     padding: .5rem 2rem;
     font-family: inherit;
-    background: var(--text-el-white);
+    background: var(--el-dark-blue);
     box-shadow: 0px 0px 2px 0px rgb(32, 32, 32);
-    color: inherit;
+    color: var(--text-white);
 
 }
 .pointer{

@@ -1,7 +1,8 @@
 
 .filter-box{
     display: flex;
-    background: #fff;
+    background: var(--el-dark-blue);
+    color: var(--text-white);
     align-items: center;
     padding: 1rem;
     border-radius: 8px;
@@ -13,7 +14,11 @@
     border: none;
     outline: none;
     font-weight: 600;
-    color: var(--text-v-dark-blue);
+    color: var(--text-white);
+    background: inherit;
+}
+.filter__input::placeholder{
+    color: var(--text-white);
 }
 .filter__icon{
     display: inline-block;
@@ -40,9 +45,10 @@
     align-items: flex-start;
     gap: 8px;
     
-    background:#fff;
     border-radius: 8px;
     padding: 1rem 2rem;
+    background: var(--el-dark-blue);
+    color: var(--text-white);
 }
 .listDropDown-item{
     width: 100%;

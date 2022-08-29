@@ -21,8 +21,9 @@
     display: flex;
     flex-direction: column;
     justify-content: space-around;
-    background-color: var(--text-el-white);
+    background-color: var(--el-dark-blue);
     border-radius: 0 0 6px 6px;
+    color: var(--text-white);
 }
 .card__title{
     font-weight: 800;

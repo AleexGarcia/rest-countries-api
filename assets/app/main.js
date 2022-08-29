@@ -52,7 +52,7 @@ async function buscaCard() {
         });
         criaCards();
         cardsHTML = document.querySelectorAll('.card-box');
-
+        figureCaption = document.querySelectorAll('.card__caption');
 
     } catch (erro) {
         console.log(erro);
@@ -86,11 +86,11 @@ function criaCards() {
 
 cartas.addEventListener('click', e => {
 
-    e.path.forEach(e => {
+    e.composedPath().forEach(e => {
         let exp = RegExp(/\d/)
         if (exp.test(e.id)) {
             var idClicado = e.id;
-            ExibeMoreInfo(idClicado);
+          ExibeMoreInfo(idClicado);
         }
     });
 
@@ -100,7 +100,7 @@ cartas.addEventListener('click', e => {
 function ExibeMoreInfo(id) {
     let element = ListaDeCards.cards[id];
     let templateInfo = `
-        <section class="more-info container" id="more-info">
+       
         <button id="more-info__btn" class="more-info__btn">Back</button>
         <figure id="country" class="country">
             <img src="${element.flags}" alt="Bandeira: ${element.name}" class="country__img">
@@ -144,14 +144,15 @@ function ExibeMoreInfo(id) {
                 </div>
             </figcaption>
         </figure>
-        </section>                            
+                                 
     `
 
     cartas.classList.add('oculto');
     filtroBusca.classList.add('oculto');
     moreInfo.innerHTML = templateInfo;
-    botaoRetornar();
 
+    botaoRetornar();
+ 
 
 }
 
@@ -161,10 +162,9 @@ function botaoRetornar() {
         filtroBusca.classList.remove('oculto');
         cartas.classList.remove('oculto');
         moreInfo.innerHTML = "";
-
     })
+    
 }
-
 
 
 buscaCard();
