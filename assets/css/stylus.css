@@ -5,11 +5,15 @@
 
 :root{
 
+    --el-dark-blue:hsl(0, 0%, 100%);
+    --bkg-v-dark-blue: hsl(0, 0%, 98%);
+    --text-white: hsl(200, 15%, 8%);
+    --font-family:'Nunito Sans', sans-serif;
+}
+.darkMode:root{
     --el-dark-blue:hsl(209, 23%, 22%);
     --bkg-v-dark-blue: hsl(207, 26%, 17%);
     --text-white:hsl(0, 0%, 100%);
-
-    --font-family:'Nunito Sans', sans-serif;
 }
 *{
     box-sizing: border-box;

@@ -167,5 +167,8 @@ function botaoRetornar() {
     
 }
 
+document.getElementById('dark-mode-btn').addEventListener('click',()=>{
+    document.querySelector('html').classList.toggle('darkMode');
+})
 
 buscaCard();
