@@ -17,12 +17,16 @@
     cursor: pointer;
 }
 .more-info__btn::before{
-    content: '';
-    background: url(../img/arrow-left-long-solid.svg) no-repeat center;
+    content: '\f177';
+    font-family:"Font Awesome 6 Free";
+    font-weight: 900;
+    font-size: 16px;
     padding: 8px;
     margin-right: 8px;
-    
+    color: var(--text-white);
 }
+
+
 
 .country__info{
     margin-top: 2rem;
